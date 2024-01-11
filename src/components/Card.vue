@@ -18,7 +18,7 @@ export default {
         <!-- CLASSE CARD DI BOOTSTRAP PER CONTENERE LE IMG DELLE CARD -->
         <div class="card">
             <!-- CICLO FOR PER CICLARE LE CARTE -->
-            <img v-for="cardImg, index in Cards.card_images" :key="index" :src="cardImg.image_url_small" alt="">
+            <img v-for="cardImg, index in Cards.card_images" :key="index" :src="cardImg.image_url" alt="">
             <!-- NOME CARTA RIPRESO DALL'ARRAY -->
             <h5>{{ Cards.name }}</h5>
             <!-- TIPOLOGIA CARTA RIPRESA DALL'ARRAY -->
@@ -47,6 +47,7 @@ export default {
         font-size: 20px;
         margin: $my_margin;
         margin-top: 20px;
+        color: white
     }
 
     h6 {
