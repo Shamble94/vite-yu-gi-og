@@ -14,11 +14,11 @@ export default {
 
 <template>
     <!-- COLONNA DA 20% -->
-    <div class="my-col-20">
+    <div class="col-2 m-3">
         <!-- CLASSE CARD DI BOOTSTRAP PER CONTENERE LE IMG DELLE CARD -->
         <div class="card">
             <!-- CICLO FOR PER CICLARE LE CARTE -->
-            <img v-for="cardImg, index in Cards.card_images" :key="index" :src="cardImg.image_url" alt="">
+            <img :src="Cards.card_images[0].image_url" alt="">
             <!-- NOME CARTA RIPRESO DALL'ARRAY -->
             <h5>{{ Cards.name }}</h5>
             <!-- TIPOLOGIA CARTA RIPRESA DALL'ARRAY -->
@@ -32,10 +32,7 @@ export default {
 @use '../styles/partials/variables' as*;
 
 /* STILE COLONNA */
-.my-col-20{
-    width: calc(100% / 5 - 20px);
-    margin: $my_margin
-}
+
 /* AGGIUNTA STILI ALLA CLASSE CARD DI BOOTSTRAP */
 .card {
     padding-bottom: $my_margin;

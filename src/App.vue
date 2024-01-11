@@ -5,6 +5,7 @@ import axios from "axios";
 import AppHeader from "./components/AppHeader.vue"
 import CardList from "./components/CardList.vue"
 import AppLoader from "./components/AppLoader.vue"
+import CardCounter from "./components/CardCounter.vue"
 import AppSearch from "./components/AppSearch.vue"
 /* IMPORTO STORE */
 import { store } from "./store.js"
@@ -14,7 +15,8 @@ export default{
       AppHeader,
       CardList,
       AppLoader,
-      AppSearch
+      AppSearch,
+      CardCounter
     },
     data(){
       return{
@@ -35,10 +37,11 @@ export default{
             }
             
             axios.get(apiUrl).then((response) => {
+            
               store.loading = true;
               store.cardList = response.data.data
               store.loading = false
-            
+              console.log(this.store.cardList)
             })
             
           },
@@ -65,6 +68,7 @@ export default{
     <AppLoader v-if="store.loading"/>
     <AppHeader :title="store.app_title" />
     <AppSearch @SearchArchetype ="getCardList" />
+    <CardCounter />
     <CardList />
   </div>
 </template>

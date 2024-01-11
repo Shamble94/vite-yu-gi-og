@@ -15,17 +15,19 @@ export default{
     <div class="container">
        <div class="row">
            <div class="col-4">
-
-               <label for="filter" class="control-label"> Archetype </label>
-               <select id="filter" class="form-select" v-model="store.search">
-                   <option value="" selected>Select Archetype</option>
-                   <option v-for = "archetype, index in  store.archeList" :key="index" :value="archetype.archetype_name" >
-                       {{ archetype.archetype_name }}
-                   </option>
-               </select>
+              <!-- LABEL ARCHETYPE -->
+              <label for="filter" class="control-label"> Archetype </label>
+              <!-- SELECT CONTENENTE GLI ARCHETYPE PRESI DALL'API -->
+              <select id="filter" class="form-select" v-model="store.search">
+                <option value="" selected>Select Archetype</option>
+                <option v-for = "archetype, index in  store.archeList" :key="index" :value="archetype.archetype_name" >
+                  {{ archetype.archetype_name }}
+                </option>
+              </select>
            </div>
             <div class="col-3">
-                <button class="btn btn-primary mt-4" @click="$emit(`SearchArchetype`)"> Search</button>
+              <!-- BOTTONE CON EMIT PER RICERCARE LE CARD IN BASE ALL'ARCHETYPE -->
+              <button class="btn btn-primary mt-4" @click="$emit(`SearchArchetype`)"> Search</button>
 
             </div>
        </div>
