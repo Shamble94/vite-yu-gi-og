@@ -47,7 +47,6 @@ body{
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 </style>
 
